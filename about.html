@@ -1,0 +1,225 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT SCHOOL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navigation Bar -->
+<div class="container mx-auto px-4 py-4 flex items-center justify-between">
+  <!-- Logo -->
+  <div class="flex items-center space-x-2">
+    <img src="images/logo.png" class="w-20 h-20 round" alt="School Logo" />
+    <img src="images/name.jpg" alt="name" class="w-50 h-20" />
+    <!--span class="text-xl font-bold text-blue-800">Prestige School</span-->
+  </div>
+
+  <!-- Mobile Toggle Button -->
+  <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Desktop Navigation -->
+  <nav class="hidden md:flex space-x-4 items-center">
+    <a href="index.html" class="hover:text-blue-600">Home</a>
+    <a href="about.html" class="hover:text-blue-600">About</a>
+    <a href="academics.html" class="hover:text-blue-600">Academics</a>
+    <a href="admissions.html" class="hover:text-blue-600">Admissions</a>
+    <a href="gallery.html" class="hover:text-blue-600">Gallery</a>
+    <a href="sjs-touch.html" class="hover:text-blue-600">SJS Touch</a>
+
+    <!-- Desktop Dropdown -->
+    <div class="relative group">
+      <button class="hover:text-blue-600">Mandatory ▾</button>
+      <div class="absolute hidden group-hover:block bg-white shadow rounded mt-2 w-56 z-50">
+        <a href="mandatory-documents.html" class="block px-4 py-2 hover:bg-blue-50">Documents & Info</a>
+        <a href="mandatory-general.html" class="block px-4 py-2 hover:bg-blue-50">General Info</a>
+        <a href="mandatory-management.html" class="block px-4 py-2 hover:bg-blue-50">Management</a>
+        <a href="mandatory-infrastructure.html" class="block px-4 py-2 hover:bg-blue-50">Infrastructure</a>
+        <a href="mandatory-safety.html" class="block px-4 py-2 hover:bg-blue-50">Safety</a>
+        <a href="mandatory-transport.html" class="block px-4 py-2 hover:bg-blue-50">Transport</a>
+        <a href="mandatory-staff-page1.html" class="block px-4 py-2 hover:bg-blue-50">Staff</a>
+        <a href="mandatory-finance.html" class="block px-4 py-2 hover:bg-blue-50">Financial</a>
+        <a href="mandatory-vital.html" class="block px-4 py-2 hover:bg-blue-50">Other Info</a>
+        <a href="mandatory-video.html" class="block px-4 py-2 hover:bg-blue-50">Campus Video</a>
+      </div>
+    </div>
+
+    <a href="contact.html" class="hover:text-blue-600">Contact</a>
+  </nav>
+</div>
+
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="md:hidden hidden bg-white px-4 pt-4 pb-6 space-y-2 rounded shadow">
+  <a href="index.html" class="block text-gray-700 hover:text-blue-600">Home</a>
+  <a href="about.html" class="block text-gray-700 hover:text-blue-600">About</a>
+  <a href="academics.html" class="block text-gray-700 hover:text-blue-600">Academics</a>
+  <a href="admissions.html" class="block text-gray-700 hover:text-blue-600">Admissions</a>
+  <a href="gallery.html" class="block text-gray-700 hover:text-blue-600">Gallery</a>
+  <a href="sjs-touch.html" class="block text-gray-700 hover:text-blue-600">SJS Touch</a>
+
+  <!-- Mobile Dropdown Toggle -->
+  <button onclick="toggleMandatoryMenu()" class="block w-full text-left text-gray-700 font-semibold">Mandatory ▾</button>
+  <div id="mandatory-mobile-dropdown" class="hidden ml-4 space-y-1">
+    <a href="mandatory-documents.html" class="block text-sm text-gray-700 hover:text-blue-600">Documents & Info</a>
+    <a href="mandatory-general.html" class="block text-sm text-gray-700 hover:text-blue-600">General Info</a>
+    <a href="mandatory-management.html" class="block text-sm text-gray-700 hover:text-blue-600">Management</a>
+    <a href="mandatory-infrastructure.html" class="block text-sm text-gray-700 hover:text-blue-600">Infrastructure</a>
+    <a href="mandatory-safety.html" class="block text-sm text-gray-700 hover:text-blue-600">Safety</a>
+    <a href="mandatory-transport.html" class="block text-sm text-gray-700 hover:text-blue-600">Transport</a>
+    <a href="mandatory-staff-page1.html" class="block text-sm text-gray-700 hover:text-blue-600">Staff</a>
+    <a href="mandatory-finance.html" class="block text-sm text-gray-700 hover:text-blue-600">Financial</a>
+    <a href="mandatory-vital.html" class="block text-sm text-gray-700 hover:text-blue-600">Other Info</a>
+    <a href="mandatory-video.html" class="block text-sm text-gray-700 hover:text-blue-600">Campus Video</a>
+  </div>
+
+  <a href="contact.html" class="block text-gray-700 hover:text-blue-600">Contact</a>
+</div>
+
+<!-- Toggle Script -->
+<script>
+  function toggleMandatoryMenu() {
+    const dropdown = document.getElementById("mandatory-mobile-dropdown");
+    dropdown.classList.toggle("hidden");
+  }
+</script>
+  </header>
+  <!-- About Section -->
+  <main class="max-w-6xl mx-auto px-6 py-16 space-y-12">
+<section>
+     <h2 class="text-4xl font-bold text-gray-800 mb-10 text-center">About School</h2>
+      <h2 class="text-3xl font-bold text-blue-800 mb-4">About Prestige Senior Secondary School</h2>
+      <p class="text-lg leading-relaxed text-gray-700">
+        Established in 1985, Prestige Senior Secondary School has been a beacon of academic excellence and holistic development. With decades of service to education, the school fosters curiosity, leadership, and community responsibility among its students.
+      </p>
+    </section>
+
+    <section>
+      <h3 class="text-2xl font-semibold text-blue-700 mb-2">Our Mission</h3>
+      <p>
+        To empower students through knowledge, character, and discipline—preparing them to face the challenges of life and contribute meaningfully to society.
+      </p>
+    </section>
+
+    <section>
+      <h3 class="text-2xl font-semibold text-blue-700 mb-2">Our Vision</h3>
+      <p>
+        To be a model institution of learning that integrates innovation, values, and global competence, while nurturing a passion for excellence.
+      </p>
+    </section>
+
+    <section>
+      <h3 class="text-2xl font-semibold text-blue-700 mb-2">Our History</h3>
+      <p>
+        From a humble beginning, the school has grown into a reputed institution offering quality education to thousands of students. It has evolved with time, adapting modern teaching methodologies and maintaining high academic standards.
+      </p>
+    </section>
+
+    <section>
+      <h3 class="text-2xl font-semibold text-blue-700 mb-4">Our Leadership</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h4 class="font-semibold text-lg text-blue-700 mb-2">Dr. Evelyn Reed - Principal</h4>
+          <p class="text-sm text-gray-700">Dr. Reed brings decades of academic leadership and a passion for innovative education that builds student confidence and competency.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h4 class="font-semibold text-lg text-blue-700 mb-2">Mr. Jonathan Blake - Director</h4>
+          <p class="text-sm text-gray-700">With a strategic vision for growth, Mr. Blake oversees the development of infrastructure and institutional goals to support learning at all levels.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+<section>
+  <h3 class="text-2xl font-semibold text-blue-700 mb-4">Our Facilities</h3>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-blue-50 p-4 rounded-lg shadow">
+      <i class="fas fa-flask text-3xl text-blue-500 mb-2"></i>
+      <h4 class="font-semibold">Science Labs</h4>
+      <p class="text-sm text-gray-600">Modern labs for Physics, Chemistry, and Biology with updated safety standards.</p>
+    </div>
+    <div class="bg-green-50 p-4 rounded-lg shadow">
+      <i class="fas fa-book-open text-3xl text-green-500 mb-2"></i>
+      <h4 class="font-semibold">Library</h4>
+      <p class="text-sm text-gray-600">Extensive collection of academic and literary resources with reading rooms.</p>
+    </div>
+    <div class="bg-yellow-50 p-4 rounded-lg shadow">
+      <i class="fas fa-futbol text-3xl text-yellow-500 mb-2"></i>
+      <h4 class="font-semibold">Sports Complex</h4>
+      <p class="text-sm text-gray-600">Indoor and outdoor facilities including basketball, football, and athletics.</p>
+    </div>
+    <div class="bg-purple-50 p-4 rounded-lg shadow">
+      <i class="fas fa-laptop-code text-3xl text-purple-500 mb-2"></i>
+      <h4 class="font-semibold">Computer Labs</h4>
+      <p class="text-sm text-gray-600">High-speed internet and modern software for all grades.</p>
+    </div>
+    <div class="bg-pink-50 p-4 rounded-lg shadow">
+      <i class="fas fa-palette text-3xl text-pink-500 mb-2"></i>
+      <h4 class="font-semibold">Art & Music Studios</h4>
+      <p class="text-sm text-gray-600">Creative spaces to explore and express artistic talents.</p>
+    </div>
+    <div class="bg-indigo-50 p-4 rounded-lg shadow">
+      <i class="fas fa-chalkboard-teacher text-3xl text-indigo-500 mb-2"></i>
+      <h4 class="font-semibold">Smart Classrooms</h4>
+      <p class="text-sm text-gray-600">Tech-enabled learning with interactive boards and audio-visual systems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- General Instructions Section -->
+<section class="mt-12">
+  <h3 class="text-2xl font-semibold text-blue-700 mb-4">General Instructions</h3>
+  <ul class="list-disc list-inside space-y-2 text-gray-700">
+    <li>Students must maintain discipline and respect school rules at all times.</li>
+    <li>Regular attendance is mandatory; prior notice required for planned absences.</li>
+    <li>Students must wear the prescribed uniform neatly and with pride.</li>
+    <li>Use of mobile phones and gadgets is restricted unless approved for educational use.</li>
+    <li>Respect for staff, peers, and property is essential to school harmony.</li>
+    <li>Parents are expected to attend all scheduled meetings and review academic updates.</li>
+  </ul>
+</section>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Prestige Senior Secondary School</h4>
+                    <p class="text-sm leading-relaxed">Committed to excellence in education and holistic development. Nurturing young minds to become responsible global citizens.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-blue-400 transition-colors nav-trigger" data-target="about">About Us</a></li>
+                        <li><a href="academics.html" class="hover:text-blue-400 transition-colors nav-trigger" data-target="academics">Academics</a></li>
+                        <li><a href="admissions.html" class="hover:text-blue-400 transition-colors nav-trigger" data-target="admissions">Admissions</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400 transition-colors nav-trigger" data-target="contact">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Sitemap (Coming Soon)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contact Information</h4>
+                    <address class="text-sm not-italic space-y-2">
+                        <p>123 Education Lane, Knowledge City</p>
+                        <p
+             class="border-gray-700 my-8">
+            <div class="text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> Prestige Senior Secondary School. All Rights Reserved.</p>
+                <p class="mt-1">Designed with <i class="fas fa-heart text-red-500"></i> by Beloved Pupils of St. Joseph School</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
